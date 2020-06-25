@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%); 
+    width: 100%;
+    color: rgb(24, 24, 24);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+}
+main .box, main .box > *, main .grid, main .grid div {
+    padding: 1em;
+}
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.message.error {
+        background-color: #f44336;
+}
+.message.success {
+    background-color: #4CAF50;
+}

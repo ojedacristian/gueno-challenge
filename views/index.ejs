@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - <%= title %></title>
+    <link rel="stylesheet" href="http://localhost:3000/estilos.css">
+</head>
+<body>
+    <main>
+        <div class="box">
+            <h1><%= title %></h1>
+            <p>Ingrese DNI</p>
+            <form action="/procesar" method="POST">
+                <input type="number" name="dni" id="dni" required>
+                <button>Buscar</button>
+            </form>
+        </div>
+        <div class="grid">
+            <div class="message <%= userData.status %>"><%= userData.message %></div>
+            <% if(userData.datos !== '') { %>
+                <div class="name">Nombre: <%= userData.datos.name %> </div>
+                <div class="birthday">Fecha de Nacimiento: <%= userData.datos.birthday %></div>
+                <div class="scoring">Scoring: <%= userData.datos.scoring %></div>
+                <div class="cuit">CUIT: <%= userData.datos.cuit %></div>
+                <% }%>
+
+        </div>
+    </main>
+<script>
+    const dni = document.getElementById('dni');
+    dni.focus();
+</script>
+
+</body>
+</html>
